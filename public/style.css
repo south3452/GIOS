@@ -1,7 +1,7 @@
 .container{
     background: #6C7A89;
     margin-top: 5%;
-    margin-bottom: 25%;
+    margin-bottom: 4%;
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -14,11 +14,19 @@
     font-weight: 500;
 }
 
-form .field{
+.field{
     height: 50px;
     width: 100%;
     margin-top: 5px ;
     text-align: center;
+}
+
+#resp-text{
+    color:black;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 #trunk{
@@ -26,5 +34,12 @@ form .field{
     width: 100%;
     margin-top: -20px ;
     text-align: center;
+    display: none;
+}
+
+#containerd{
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
     display: none;
 }

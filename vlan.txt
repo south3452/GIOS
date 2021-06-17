@@ -1,25 +1,10 @@
 enable
 configure terminal
-vlan 10
-name name
-vlan 20
-name tody
-vlan 30
-name porra
-exit
-interface fastethernet 0/10
+vlan 150
+name TESTE
+interface fastethernet 0/1
 switchport mode access
-switchport access vlan 10
-exit
-interface fastethernet 0/11
-switchport mode access
-switchport access vlan 20
-exit
-interface fastethernet 0/12
-switchport mode access
-switchport access vlan 30
-exit
-interface gigabitethernet 0/24
-switchport mode trunk
+switchport access vlan 150
 exit
 do wr
+exit

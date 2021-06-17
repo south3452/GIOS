@@ -20,11 +20,11 @@ module.exports =  async (vlan, nome, porta) => {
                 //escrever a ultima linha com um "exit" no final
                 escreva = `\nvlan ${vlan.split(',')[i]}\nname ${nome.split(',')[i]}\nexit`
             }
-            else if(i == 0){
+            if(i == 0){
                 //reecrever o arquivo com a primeira linha normal
                 await writeFile(directory, comeco, (err) => {
-                    if(err) throw err;
-                    console.log();
+                    if(err){throw err};
+                    console.log('Foi');
                 });
                 escreva = `\nvlan ${vlan.split(',')[i]}\nname ${nome.split(',')[i]}`
             }

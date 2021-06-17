@@ -4,6 +4,8 @@ let porta = document.getElementById('porta')
 let check = document.getElementById('check')
 let divtrunk =  document.getElementById('trunk')
 let trunk = document.getElementById('texttrunk')
+let resposta = document.getElementById('resp-text')
+let cxtxt = document.getElementById('containerd')
 
 
 
@@ -14,8 +16,7 @@ document.getElementById('check').addEventListener('change', (e) =>{
 })
 
 document.getElementById('formulario').addEventListener('submit', (e) =>{
-    e.preventDefault()   
-    
+    e.preventDefault()
 
     const formData = {
         nome: nomee.value,
@@ -24,7 +25,7 @@ document.getElementById('formulario').addEventListener('submit', (e) =>{
     }
 
     if(check.checked){
-        formData.porta += ',' + trunk.value
+        formData.porta += ',' + trunk.value + 'f'
     }
     
     let options= {
@@ -32,11 +33,16 @@ document.getElementById('formulario').addEventListener('submit', (e) =>{
         headers: formData
     }
 
-    fetch('/', options).then(response => response.text()).then(text => {
-        console.log(text)
-        //nomee.value = ''
-        //vlan.value = ''
-        //porta.value = ''
-    }).catch(error => console.log(error))
+    fetch('/', options).then(response => response.text().then(txt => {
+        cxtxt.style.display = 'block' 
+        resposta.innerText = `${txt}` 
+        nomee.value = ''
+        vlan.value = ''
+        porta.value = ''
+        if(check.checked){
+            trunk.value = ''
+            check.checked = false
+        }
+    }))
 
 })

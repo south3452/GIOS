@@ -17,7 +17,7 @@ app.get("/",(req,res) => {
 app.post("/", (req, res) =>{
     var p = Promise.resolve(vlan(req.headers.vlan,req.headers.nome,req.headers.porta))
     p.then(() =>{ 
-        res.sendFile(__dirname + '/vlan.txt')
+        res.download(__dirname + '/vlan.txt')
     })
 
 })
