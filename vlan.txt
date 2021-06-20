@@ -1,10 +1,22 @@
 enable
 configure terminal
-vlan 150
-name TESTE
+vlan 13
+name fafa
+vlan 20
+name agaga
+vlan 30
+name  agag
 interface fastethernet 0/1
 switchport mode access
-switchport access vlan 150
+switchport access vlan 13
+exit
+interface fastethernet 0/2
+switchport mode access
+switchport access vlan 20
+exit
+interface fastethernet 0/3
+switchport mode access
+switchport access vlan 30
 exit
 do wr
 exit
